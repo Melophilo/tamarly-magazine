@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tamarly Magazine, Issue 001, The Rebuild</title>
+<meta name="description" content="Twelve reports on how artificial intelligence is being financed, fought over, regulated and lived with. Every figure cited. Read Issue 001 free.">
+<meta property="og:title" content="Tamarly Magazine, Issue 001, The Rebuild">
+<meta property="og:description" content="There is no easy fix for the complexity we live in. Twelve reports, every figure cited.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213D;--navy2:#172542;--cream:#FAF8F3;--mist:#B0B8C8;--slate:#5A6A8C;--trace:#27344E;
+  --cyan:#57E6E0;--ember:#E08A3C;--gold:#C8A55A;--blue:#4FA3E0;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:var(--font);font-weight:400;font-size:17px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.kick{font-weight:500;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan)}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.02}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:10px;
+  font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--cyan);background:var(--cyan);color:var(--navy)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:var(--slate)}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+
+header.nav{border-bottom:1px solid var(--trace)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:20px;padding-bottom:20px}
+.mark{font-weight:700;font-size:22px;letter-spacing:.02em}
+.mark span{color:var(--mist);font-weight:400;font-size:13px;display:block;letter-spacing:.14em;text-transform:uppercase}
+
+.hero{padding:76px 0 64px;background:linear-gradient(115deg,#14213D,#172542)}
+.hero .grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(56px,11vw,116px)}
+.hero p.stand{font-size:clamp(19px,2.3vw,24px);color:var(--mist);max-width:34ch;margin:22px 0 0}
+.rule{width:92px;height:4px;background:var(--cyan);margin:22px 0}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.coverimg{width:100%;max-width:420px;display:block;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.meta{margin-top:18px;font-size:13.5px;color:var(--slate)}
+
+.claim{border-top:1px solid var(--trace);border-bottom:1px solid var(--trace);padding:70px 0;background:var(--navy)}
+.claim h2{font-size:clamp(34px,5.4vw,62px);max-width:20ch}
+.claim p{color:var(--mist);max-width:60ch;margin:22px 0 0;font-size:18.5px}
+
+.stats{display:grid;grid-template-columns:1fr;gap:0;padding:0}
+.stats div{border-bottom:1px solid var(--trace);padding:26px 0}
+.stats .lab{display:block;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.stats b{display:block;font-size:46px;font-weight:700;line-height:1}
+.stats span{display:block;color:var(--mist);font-size:15px;margin-top:8px;max-width:34ch}
+.s1 b{color:var(--gold)}.s2 b{color:var(--ember)}.s3 b{color:var(--cyan)}.s4 b{color:var(--blue)}
+
+section{padding:74px 0}
+.sechead{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--cream);padding-bottom:12px;margin-bottom:34px}
+.sechead h2{font-size:clamp(28px,4vw,40px)}
+.toc{display:grid;grid-template-columns:1fr;gap:0}
+.toc article{display:grid;grid-template-columns:46px 1fr;gap:14px;border-top:1px solid var(--trace);padding:18px 0}
+.toc .n{font-weight:700;color:var(--mist)}
+.toc h3{font-size:22px;line-height:1.2}
+.toc p{margin:6px 0 0;color:var(--mist);font-size:15px;line-height:1.5}
+.toc .sec{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--slate);font-weight:500}
+
+.strip{background:var(--navy2);border-top:1px solid var(--trace);border-bottom:1px solid var(--trace)}
+.cols{display:grid;grid-template-columns:1fr;gap:34px}
+.cols h3{font-size:21px;margin-bottom:8px}
+.cols p{color:var(--mist);font-size:15.5px;margin:0}
+
+form.sub{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+form.sub label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+form.sub input{flex:1 1 280px;min-height:52px;padding:0 16px;border-radius:10px;border:1px solid var(--slate);
+  background:#0F1A31;color:var(--cream);font-family:var(--font);font-size:16px}
+form.sub input:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.note{color:var(--slate);font-size:13px;margin-top:12px}
+
+footer{padding:56px 0 70px;border-top:1px solid var(--trace);color:var(--mist);font-size:14px}
+footer .fgrid{display:grid;grid-template-columns:1fr;gap:26px}
+footer .k{font-weight:500;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+footer .bar{display:flex;align-items:center;gap:12px;margin-top:34px;font-weight:600;color:var(--cream)}
+footer .bar i{display:block;width:44px;height:3px;background:var(--cyan)}
+
+@media (min-width:880px){
+  body{font-size:18px}
+  .wrap{padding:0 44px}
+  .hero{padding:104px 0 88px}
+  .hero .grid{grid-template-columns:1.1fr .9fr;gap:64px}
+  .stats{grid-template-columns:repeat(4,1fr);gap:0 34px}
+  .stats div{border-bottom:0}
+  .toc{grid-template-columns:1fr 1fr;gap:0 52px}
+  .cols{grid-template-columns:repeat(3,1fr);gap:44px}
+  footer .fgrid{grid-template-columns:repeat(3,1fr);gap:44px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <div class="mark">Tamarly<span>Research and advisory</span></div>
+  <a class="btn ghost" href="read/">Read Issue 001</a>
+</div></header>
+
+<section class="hero"><div class="wrap grid">
+  <div>
+    <div class="kick">Tamarly Magazine, Issue 001, September 2026</div>
+    <div class="rule"></div>
+    <h1>The Rebuild</h1>
+    <p class="stand">Twelve reports on how artificial intelligence is being financed, fought over, regulated and lived with, and what it is doing to the shape of the century.</p>
+    <div class="cta">
+      <a class="btn" href="read/" id="read">Read the digital edition</a>
+      <a class="btn ghost" href="Tamarly-Magazine-Issue-001.pdf">Download the PDF</a>
+    </div>
+    <p class="meta">39 pages. Every figure cited to a numbered source. Free to read.</p>
+  </div>
+  <div>
+    <img class="coverimg" src="cover.png" alt="The cover of Tamarly Magazine, Issue 001, The Rebuild">
+  </div>
+</div></section>
+
+<section class="claim"><div class="wrap">
+  <div class="kick">The editorial line</div>
+  <h2 style="margin-top:18px">There is no easy fix for the complexity we live in.</h2>
+  <p>Most coverage of artificial intelligence sells relief. A tool that solves it, a policy that settles it, a forecast that ends the argument. We think that is the wrong promise. AI is now a condition of the whole economy, and it lands on capital, on states, on classrooms and on kitchens at different speeds. This magazine reads that as one story, once a month, with the evidence attached.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead"><h2>Four numbers from this issue</h2></div>
+  <div class="stats">
+    <div class="s1"><span class="lab">Compute</span><b>$500bn</b><span>of private capital lined up to finance AI infrastructure, with up to 25 percent of the loss covered by the chipmaker.</span></div>
+    <div class="s2"><span class="lab">Munitions</span><b>200 to 1</b><span>One $4 million interceptor buys 200 drones at $20,000. Under 3 percent of the Pentagon's munitions funding goes to low-cost weapons.</span></div>
+    <div class="s3"><span class="lab">Electricity</span><b>945 TWh</b><span>Data centre electricity by 2030, slightly more than Japan uses today.</span></div>
+    <div class="s4"><span class="lab">Home robots</span><b>$20,000</b><span>The price of the first home humanoid, or $499 a month, with a remote operator behind its eyes.</span></div>
+  </div>
+</div></section>
+
+<section class="strip"><div class="wrap">
+  <div class="sechead"><h2>What is inside</h2></div>
+  <div class="toc">
+    <article><div class="n">Ed.</div><div><div class="sec">Editorial</div><h3>Everything at Once</h3><p>Demographics, technology and politics are moving together. The century is being assembled out of the collision.</p></div></article>
+    <article><div class="n">01</div><div><div class="sec">Health</div><h3>Vital Signs</h3><p>Wearables are turning into continuous health records, and the regulator is drawing the line feature by feature.</p></div></article>
+    <article><div class="n">02</div><div><div class="sec">Finance</div><h3>Lending Against the Machine</h3><p>The build-out runs on debt, vendor guarantees and investors on both sides of the trade.</p></div></article>
+    <article><div class="n">03</div><div><div class="sec">Society</div><h3>A Machine That Cannot Say No</h3><p>Chatbots are designed to keep people talking. For a small share of a very large audience, that has become dangerous.</p></div></article>
+    <article><div class="n">04</div><div><div class="sec">Enterprise</div><h3>Waiting for the Mandate</h3><p>Companies know how to deploy agents. They have not learned to say what leadership expects of them.</p></div></article>
+    <article><div class="n">05</div><div><div class="sec">War</div><h3>Expensive Answers to Cheap Questions</h3><p>Autonomy makes mass cheap, and production capacity is replacing sophistication as the measure of deterrence.</p></div></article>
+    <article><div class="n">06</div><div><div class="sec">Education</div><h3>The Students Who Cannot Quote Themselves</h3><p>An MIT study found that writing with a model cost students their memory of their own work.</p></div></article>
+    <article><div class="n">07</div><div><div class="sec">Media</div><h3>The Last Local Dollar</h3><p>Local newsrooms now bid for small-business budgets against Google, Meta and an ad-funded ChatGPT.</p></div></article>
+    <article><div class="n">08</div><div><div class="sec">Environment</div><h3>The Data Centre Next Door</h3><p>The fight over where the machines go is one of the few issues that crosses party lines.</p></div></article>
+    <article><div class="n">09</div><div><div class="sec">Supply chain</div><h3>Twenty-One Miles</h3><p>The AI economy runs through a few chokepoints. The Hormuz closure showed how fast a shock travels.</p></div></article>
+    <article><div class="n">10</div><div><div class="sec">Industries</div><h3>Digital Oil</h3><p>A market for computing power is being built in real time, with indices, exchanges and a regulator.</p></div></article>
+    <article><div class="n">11</div><div><div class="sec">Physical AI</div><h3>The Robot Comes Home</h3><p>China ships the volume. America raises the money. The first real price point is a used car.</p></div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead"><h2>How we work</h2></div>
+  <div class="cols">
+    <div><h3>Every figure cited</h3><p>Each article ends with numbered sources. Projections are labelled as projections, and quotes are attributed to the outlet that carried them.</p></div>
+    <div><h3>Positions are dated and kept</h3><p>We record the calls we make with the date they were made. When we change our view, the old entry stays visible next to the new one.</p></div>
+    <div><h3>Publishing and investing stay apart</h3><p>Tamarly Media publishes and holds no positions. Tamarly Capital holds positions and publishes nothing. Coverage cannot be purchased.</p></div>
+  </div>
+</div></section>
+
+<section class="strip"><div class="wrap">
+  <div class="kick">The newsletter</div>
+  <h2 style="margin-top:16px;font-size:clamp(28px,4vw,44px)">Get the weekly brief, and Issue 002 first</h2>
+  <p style="color:var(--mist);max-width:56ch">The Tamarly newsletter reads the week in AI, capital and geopolitics, then says what changed and what it costs. The magazine lands monthly on top of it.</p>
+  <div class="cta" style="margin-top:22px"><a class="btn" href="https://convergences.substack.com/subscribe">Subscribe to the weekly brief</a><a class="btn ghost" href="https://convergences.substack.com/p/magazine">See the magazine on Substack</a></div>
+  <p class="note">No advertising in the magazine. Unsubscribe in one click.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><div class="k">Masthead</div><p>Editor, Melvine R. Manchau. Published monthly by Tamarly Media from the research of the Tamarly newsletter and Tamarly Research.</p></div>
+    <div><div class="k">Editions</div><p><a href="read/">Digital edition</a>. <a href="Tamarly-Magazine-Issue-001.pdf">Print PDF</a>. Issue 001, September 2026, 39 pages.</p></div>
+    <div><div class="k">Contact</div><p>Press, syndication, advisory and research enquiries, <a href="mailto:contact@tamarly.ai">contact@tamarly.ai</a>.</p></div>
+  </div>
+  <div class="bar"><i></i>tamarly.ai</div>
+</div></footer>
+
+</body>
+</html>
